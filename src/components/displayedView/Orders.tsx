@@ -4,11 +4,23 @@ import Order from '../Order';
 import Loading from "../Loading"
 import { OrderType } from '@/types';
 import { ordersTableThs } from '@/constants';
+import Paginations from '../Paginations';
 
 const Orders = () => {
+
+  /* fetching data variables*/
   const [orders, setOrders] = useState<OrderType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
+
+  /* pagination variables */
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pageLength, setPageLength] = useState<number>(6);
+  const pages = Math.ceil(orders.length / pageLength);
+  const startIndex = (currentPage - 1) * pageLength;
+  const endIndex = startIndex + pageLength;
+  const shownOrders = orders.slice(startIndex, endIndex);
+
   const fetchData = async() => {
     try {
       const res = await fetch("http://localhost:4000/orders");
@@ -39,7 +51,7 @@ const Orders = () => {
   }
 
   return (
-  <div className="overflow-x-auto">
+  <div className="relative pb-10 h-[80%]">
     <h1 className='font-bold mb-3'>Refund Orders</h1>
     <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
       <thead className="ltr:text-left rtl:text-right">
@@ -57,10 +69,16 @@ const Orders = () => {
 
       <tbody className="divide-y divide-gray-200">
         {
-          orders.map((order:OrderType) => <Order key={order.id} {...order} />)
+          shownOrders.map((order:OrderType) => <Order key={order.id} {...order} />)
         }
       </tbody>
     </table>
+    <Paginations 
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage} 
+      pages={pages} 
+      pageLength={pageLength}  
+    />
   </div>
   )
 }

@@ -1,40 +1,43 @@
 import Orders from "@/components/displayedView/Orders";
-import Tasks from "@/components/displayedView/Tasks";
 import { FaLuggageCart, FaGift, FaCog } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import { FaSquarePollVertical } from "react-icons/fa6";
+import Dashboard from "@/components/displayedView/Dashboard";
+import Coupons from "@/components/displayedView/Coupons";
+import Report from "@/components/displayedView/Report";
+import Setting from "@/components/displayedView/Setting";
 
 
 export const sidebarLinks = [
     {
         id: 1,
-        name: 'Orders',
+        name: 'Dashboard',
         icon: <MdDashboard />,
-        comp: <Tasks />,
+        comp: <Dashboard />,
     },
     {
         id: 2,
-        name: 'order',
+        name: 'Orders',
         icon: <FaLuggageCart />,
         comp: <Orders />,
     },
     {
         id: 3,
-        name: 'order',
+        name: 'Coupons',
         icon: <FaGift  />,
-        comp: <Tasks />,
+        comp: <Coupons />,
     },
     {
         id: 4,
-        name: 'order',
+        name: 'Report',
         icon: <FaSquarePollVertical />,
-        comp: <Tasks />,
+        comp: <Report />,
     },
     {
         id: 5,
-        name: 'order',
+        name: 'Setting',
         icon: <FaCog />,
-        comp: <Tasks />,
+        comp: <Setting />,
     },
 
 ]

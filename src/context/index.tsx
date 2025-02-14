@@ -12,7 +12,7 @@ type Context = {
  export function AppWrapper ({children}: {
     children: React.ReactNode;
  }) {
-    const [currentView, setCurrentView] = useState(sidebarLinks[0].comp);
+    const [currentView, setCurrentView] = useState(sidebarLinks[1].comp);
     const contextValue = {
       currentView,
       setCurrentView,

@@ -41,3 +41,30 @@ export const sidebarLinks = [
     },
 
 ]
+
+export const ordersTableThs = [
+    {
+        id: 1,
+        name: "Order"
+    },
+    {
+        id: 2,
+        name: "Store"
+    },
+    {
+        id: 3,
+        name: "Reason"
+    },
+    {
+        id: 4,
+        name: "Amount"
+    },
+    {
+        id: 5,
+        name: "Items"
+    },
+    {
+        id: 6,
+        name: "Actions"
+    },
+]

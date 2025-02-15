@@ -1,10 +1,10 @@
 "use client"
 import { decisionItems } from '@/constants';
-import { DecisionItemType } from '@/types';
+import { DecisionItemType, SetBooleanStateType } from '@/types';
 import React, { useState } from 'react'
 import { FaChevronDown } from "react-icons/fa";
 
-const Decision = () => {
+const Decision = ({setShowToast}: {setShowToast: SetBooleanStateType}) => {
     
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [decisionVal, setDecisionVal] = useState<string>("decision");
@@ -15,6 +15,8 @@ const Decision = () => {
 
     const handleItemBtn = (val: string): void => {
         setDecisionVal(val);
+        setShowMenu(false);
+        setShowToast(true);
       }
 
   return (

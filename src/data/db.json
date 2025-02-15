@@ -9,7 +9,7 @@
       "amount": 5,
       "active": true,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "shirt",
           "id": "1",
@@ -19,6 +19,42 @@
         {
           "name": "shoes",
           "id": "2",
+          "price": 80,
+          "quantity": 5
+        },
+        {
+          "name": "shirt",
+          "id": "3",
+          "price": 100,
+          "quantity": 12
+        },
+        {
+          "name": "shoes",
+          "id": "4",
+          "price": 80,
+          "quantity": 5
+        },
+        {
+          "name": "shirt",
+          "id": "5",
+          "price": 100,
+          "quantity": 12
+        },
+        {
+          "name": "shoes",
+          "id": "6",
+          "price": 80,
+          "quantity": 5
+        },
+        {
+          "name": "shirt",
+          "id": "7",
+          "price": 100,
+          "quantity": 12
+        },
+        {
+          "name": "shoes",
+          "id": "8",
           "price": 80,
           "quantity": 5
         }
@@ -33,7 +69,7 @@
       "amount": 8,
       "active": false,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "scarf",
           "id": "1",
@@ -57,7 +93,7 @@
       "amount": 9,
       "active": false,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "scarf",
           "id": "1",
@@ -93,7 +129,7 @@
       "amount": 4,
       "active": true,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "shirt",
           "id": "1",
@@ -111,7 +147,7 @@
       "amount": 8,
       "active": false,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "hat",
           "id": "1",
@@ -141,7 +177,7 @@
       "amount": 10,
       "active": false,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "scarf",
           "id": "1",
@@ -159,7 +195,7 @@
       "amount": 8,
       "active": false,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "hat",
           "id": "1",
@@ -189,7 +225,7 @@
       "amount": 4,
       "active": true,
       "decision": null,
-      "Items": [
+      "items": [
         {
           "name": "shoes",
           "id": "1",

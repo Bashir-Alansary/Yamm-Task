@@ -1,11 +1,10 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Order from '../Order/Order';
-import Loading from "../OrdersLoading"
 import { OrderType } from '@/types';
 import { ordersTableThs } from '@/constants';
 import Paginations from '../Paginations';
-import OrdersLoading from '../OrdersLoading';
+import TableLoading from '../TableLoading';
 
 const Orders = () => {
 
@@ -39,58 +38,16 @@ const Orders = () => {
     }
   }
 
-const putData = async() => {
-    // Define the data to update
-const data = {
-      "id": "2",
-      "reason": "problem with the qaulity",
-      "store_name": "Ebay",
-      "store_logo": "/images/ebay.png",
-      "store_url": "#",
-      "amount": 8,
-      "active": false,
-      "decision": null,
-      "Items": [
-        {
-          "name": "scarf",
-          "id": "1",
-          "price": 40,
-          "quantity": 4
-        },
-        {
-          "name": "shoes",
-          "id": "2",
-          "price": 80,
-          "quantity": 5
-        }
-      ]
-    };
-
-// Define the request options
-const requestOptions = {
-  method: "PUT", // Specify the request method
-  headers: { "Content-Type": "application/json" }, // Specify the content type
-  body: JSON.stringify(data) // Send the data in JSON format
-};
-
-// Make the request
-fetch('http://localhost:4000/orders/2', requestOptions)
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => console.log(data)) // Do something with the data
-  .catch(error => console.error(error)); // Handle errors
-
-}
   
   useEffect(()=> {
     fetchData();
-    putData();
   }, []);
 
   console.log(error);
   
   if (loading) {
     return (
-      <OrdersLoading pageLength={pageLength} />
+      <TableLoading pageLength={pageLength} />
     )
   }
 

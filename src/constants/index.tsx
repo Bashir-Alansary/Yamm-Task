@@ -86,3 +86,26 @@ export const decisionItems = [
         value: "escalate",
     },
 ]
+
+export const itemsTableThs = [
+    {
+        id: 1,
+        name: "#"
+    },
+    {
+        id: 2,
+        name: "Name"
+    },
+    {
+        id: 3,
+        name: "Price"
+    },
+    {
+        id: 4,
+        name: "Quantity"
+    },
+    {
+        id: 5,
+        name: "Total"
+    },
+]

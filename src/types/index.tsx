@@ -14,7 +14,7 @@ export type OrderType = {
     amount: number;
     active: boolean;
     decision: null;
-    Items: ItemType[];
+    items: ItemType[];
 }
 
 export type DecisionItemType = {
@@ -22,3 +22,10 @@ export type DecisionItemType = {
     name: string;
     value: string;
 }
+
+export type TableThsType = {
+    id: number;
+    name: string;
+}
+
+export type SetBooleanStateType = React.Dispatch<React.SetStateAction<boolean>>;

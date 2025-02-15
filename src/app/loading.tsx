@@ -1,8 +1,9 @@
+import TableLoading from '@/components/TableLoading'
 import React from 'react'
 
 const loading = () => {
   return (
-    <div>loading..</div>
+    <TableLoading pageLength={6} />
   )
 }
 

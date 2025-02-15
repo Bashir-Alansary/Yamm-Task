@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OrdersLoading = ({pageLength}: {pageLength:number}) => {
+const TableLoading = ({pageLength}: {pageLength:number}) => {
   return (
     <div role="status" className="p-4 space-y-2 divide-y divide-gray-200 rounded-sm shadow-sm animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700">
         <div className="flex items-center justify-between w-full bg-white p-3">
@@ -25,4 +25,4 @@ const OrdersLoading = ({pageLength}: {pageLength:number}) => {
   )
 }
 
-export default OrdersLoading
+export default TableLoading

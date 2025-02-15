@@ -16,3 +16,9 @@ export type OrderType = {
     decision: null;
     Items: ItemType[];
 }
+
+export type DecisionItemType = {
+    id: number;
+    name: string;
+    value: string;
+}

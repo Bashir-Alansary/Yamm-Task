@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import {AppWrapper} from "@/context/index"
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,12 @@ export default function RootLayout({
         <AppWrapper>
           <div className="flex rounded-2xl overflow-hidden">
             <Sidebar />
-            {children}
+            <div className="h-screen w-[80%] bg-[#0f1241] p-1">
+            <div className="h-full bg-[#edf0f7] rounded-2xl p-8">
+              <Header />
+              {children}
+            </div>
+            </div>
           </div>
         </AppWrapper>
       </body>

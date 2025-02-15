@@ -68,3 +68,21 @@ export const ordersTableThs = [
         name: "Actions"
     },
 ]
+
+export const decisionItems = [
+    {
+        id: 1,
+        name: "reject",
+        value: "reject",
+    },
+    {
+        id: 2,
+        name: "accept",
+        value: "accept",
+    },
+    {
+        id: 3,
+        name: "escalate",
+        value: "escalate",
+    },
+]

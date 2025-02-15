@@ -3,6 +3,7 @@ import { sidebarLinks } from '@/constants'
 import React, { useState } from 'react'
 import {useAppContext} from "@/context"
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Sidebar = () => {
     const contextValues = useAppContext();
@@ -33,13 +34,14 @@ const Sidebar = () => {
                         key={id} 
                         className='mb-6 flex justify-center'
                         >
-                            <button 
+                            <Link
+                            href="/" 
                             className={`${activeBtn === id ? 'bg-[#8662a7]':'bg-none'} w-[86%] text-white text-xl flex items-center py-3 px-8 rounded-md transition-all duration-500`}
                             onClick={()=>handleButton(id)}
                             >
                                 <span className='mr-8'>{icon}</span>
                                 <span>{name}</span>
-                            </button>
+                            </Link>
                         </li>
                     )
                 })

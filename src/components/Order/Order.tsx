@@ -1,6 +1,7 @@
 import { OrderType } from '@/types'
 import Image from 'next/image'
-import React from 'react'
+import React, { act } from 'react'
+import Actions from './Actions/Actions'
 
 const Order = ({id, reason, store_name, store_logo, store_url, amount, active, decision, Items}:OrderType) => {
   return (
@@ -21,14 +22,7 @@ const Order = ({id, reason, store_name, store_logo, store_url, amount, active, d
       <td className="px-4 py-2 whitespace-nowrap text-gray-700">{reason}</td>
       <td className="px-4 py-2 whitespace-nowrap text-gray-700">{amount}</td>
       <td className="px-4 py-2 whitespace-nowrap text-gray-700">{Items.length} (not yet).</td>
-      <td className="px-4 py-2 whitespace-nowrap">
-        <a
-          href="#"
-          className="inline-block rounded-sm bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
-        >
-          View
-        </a>
-      </td>
+      <td className="px-4 py-2 whitespace-nowrap"><Actions id={id} active={active}/></td>
     </tr>
   )
 }

@@ -54,26 +54,28 @@ const Orders = () => {
   return (
   <div className="relative pb-10 h-[80%]">
     <h1 className='font-bold mb-3'>Refund Orders</h1>
-    <table className="min-w-full divide-y-4 divide-[#edf0f7] bg-white text-sm">
-      <thead className="ltr:text-left rtl:text-right">
-        <tr>
-          {
-            ordersTableThs.map(tableTh => {
-              const {id, name} = tableTh;
-              return (
-                <th key={id} className="px-4 py-2 bg-[#edf0f7] font-bold whitespace-nowrap text-gray-900 text-left">{name}</th>
-              )
-            })
-          }
-        </tr>
-      </thead>
+    <div className='overflow-x-auto'>
+      <table className="min-w-full divide-y-4 divide-[#edf0f7] bg-white text-sm">
+        <thead className="ltr:text-left rtl:text-right">
+          <tr>
+            {
+              ordersTableThs.map(tableTh => {
+                const {id, name} = tableTh;
+                return (
+                  <th key={id} className="px-4 py-2 bg-[#edf0f7] font-bold whitespace-nowrap text-gray-900 text-left">{name}</th>
+                )
+              })
+            }
+          </tr>
+        </thead>
 
-      <tbody className="divide-y-4 divide-[#edf0f7]">
-        {
-          shownOrders.map((order:OrderType) => <Order key={order.id} {...order} />)
-        }
-      </tbody>
-    </table>
+        <tbody className="divide-y-4 divide-[#edf0f7]">
+          {
+            shownOrders.map((order:OrderType) => <Order key={order.id} {...order} />)
+          }
+        </tbody>
+      </table>
+    </div>
     <Paginations 
       currentPage={currentPage}
       setCurrentPage={setCurrentPage} 

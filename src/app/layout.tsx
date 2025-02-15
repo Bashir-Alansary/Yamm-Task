@@ -31,10 +31,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppWrapper>
-          <div className="flex rounded-2xl overflow-hidden">
+          <div className="flex xl:rounded-2xl md:overflow-hidden">
             <Sidebar />
-            <div className="h-screen w-[80%] bg-[#0f1241] p-1">
-            <div className="h-full bg-[#edf0f7] rounded-2xl p-8">
+            <div className="h-screen xs:w-full xl:w-[80%] xl:bg-[#0f1241] xl:p-1">
+            <div className="h-full bg-[#edf0f7] xl:rounded-2xl xs:py-4 xs:px-8  xl:p-8">
               <Header />
               {children}
             </div>

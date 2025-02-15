@@ -64,26 +64,28 @@ const page = () => {
         <span className='ml-2'>Orders</span>
       </Link>
       <h1 className='font-bold my-3'>Order Items</h1>
-      <table className="min-w-full divide-y-4 divide-[#edf0f7] bg-white text-sm">
-          <thead className="ltr:text-left rtl:text-right">
-              <tr>
-              {
-                  itemsTableThs.map(itemTh => {
-                  const {id, name} = itemTh;
-                  return (
-                      <th key={id} className="px-4 py-2 bg-[#edf0f7] font-bold whitespace-nowrap text-gray-900 text-left">{name}</th>
-                  )
-                  })
-              }
-              </tr>
-          </thead>
+      <div className='overflow-x-auto'>
+        <table className="min-w-full divide-y-4 divide-[#edf0f7] bg-white text-sm">
+            <thead className="ltr:text-left rtl:text-right">
+                <tr>
+                {
+                    itemsTableThs.map(itemTh => {
+                    const {id, name} = itemTh;
+                    return (
+                        <th key={id} className="px-4 py-2 bg-[#edf0f7] font-bold whitespace-nowrap text-gray-900 text-left">{name}</th>
+                    )
+                    })
+                }
+                </tr>
+            </thead>
 
-          <tbody className="divide-y-4 divide-[#edf0f7]">
-              {
-                  shownItems.map((item:ItemType) => <Item key={item.id} {...item} />)
-              }
-          </tbody>
-      </table>
+            <tbody className="divide-y-4 divide-[#edf0f7]">
+                {
+                    shownItems.map((item:ItemType) => <Item key={item.id} {...item} />)
+                }
+            </tbody>
+        </table>
+      </div>
       <Paginations 
         currentPage={currentPage}
         setCurrentPage={setCurrentPage} 

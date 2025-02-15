@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import {useAppContext} from "@/context"
 import Image from 'next/image'
 import Link from 'next/link'
+import { IoChevronBackCircle } from "react-icons/io5";
 
 const Sidebar = () => {
     const contextValues = useAppContext();
@@ -13,18 +14,25 @@ const Sidebar = () => {
         if (newView) {
             contextValues?.setCurrentView(newView.comp);
             setActiveBtn(id);
+            contextValues?.closeSidebar();
         }
     }
     
   return (
-    <div className='w-[20%] bg-[#0f1241] text-center py-8 px-2'>
+    <div className={`xs:fixed xs:top-0 ${contextValues?.viewSidbar? 'xs:left-0' : 'xs:-left-full'} max-h-screen overflow-y-auto xl:relative xl:top-0 xl:left-0 xs:w-20 xl:w-[20%] bg-[#0f1241] text-center py-8 px-2 z-50 transition-all duration-500`}>
         <Image
         src="/images/logo.png"
         width={64}
         height={64}
         alt="logo"
-        className='mx-auto'
+        className='xs:hidden xl:block xl:mx-auto'
         />
+        <button 
+        className='xs:block xs:text-4xl xs:text-white xs:mx-auto xl:hidden'
+        onClick={contextValues?.closeSidebar}
+        >
+            <IoChevronBackCircle />
+        </button>
         <ul className='mt-20'>
             {
                 sidebarLinks.map(item => {
@@ -36,11 +44,11 @@ const Sidebar = () => {
                         >
                             <Link
                             href="/" 
-                            className={`${activeBtn === id ? 'bg-[#8662a7]':'bg-none'} w-[86%] text-white text-xl flex items-center py-3 px-8 rounded-md transition-all duration-500`}
+                            className={`${activeBtn === id ? 'xs:text-[#8662a7] xs:bg-white xl:bg-[#8662a7] xl:text-white ':'xs:text-white bg-none'} xs:w-fit xl:w-[86%] text-white flex items-center py-3 xs:px-3 xl:px-5 rounded-lg transition-all duration-500`}
                             onClick={()=>handleButton(id)}
                             >
-                                <span className='mr-8'>{icon}</span>
-                                <span>{name}</span>
+                                <span className='xl:mr-8 text-2xl'>{icon}</span>
+                                <span className='xs:hidden xl:block xl:text-lg'>{name}</span>
                             </Link>
                         </li>
                     )

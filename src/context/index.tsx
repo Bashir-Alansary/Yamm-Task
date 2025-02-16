@@ -2,13 +2,12 @@
 
 import React, { createContext, useState, useContext, JSX } from "react";
 import { sidebarLinks } from "@/constants";
-import { SetBooleanStateType } from "@/types";
 
 type Context = {
    currentView: JSX.Element,
    setCurrentView: React.Dispatch<React.SetStateAction<JSX.Element>>,
    viewSidbar: boolean,
-   setViewSidebar: SetBooleanStateType,
+   setViewSidebar: React.Dispatch<React.SetStateAction<boolean>>,
    closeSidebar: ()=> void,
 }
  const AppContext = createContext<Context | null>(null);

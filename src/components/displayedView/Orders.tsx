@@ -21,26 +21,25 @@ const Orders = () => {
   const endIndex = startIndex + pageLength;
   const shownOrders = orders.slice(startIndex, endIndex);
 
-  const fetchData = async() => {
-    try {
-      const res = await fetch("http://localhost:4000/orders");
-      if (!res.ok) throw new Error("Failed to fetch the Orders");
-      const orders = await res.json();
-      setOrders(orders);
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("An unknown error occurred")
-      }
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   
   useEffect(()=> {
+    const fetchData = async() => {
+      try {
+        const res = await fetch("http://localhost:4000/orders");
+        if (!res.ok) throw new Error("Failed to fetch the Orders");
+        const orders = await res.json();
+        setOrders(orders);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred")
+        }
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    }
     fetchData();
   }, []);
 

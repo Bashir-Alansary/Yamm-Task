@@ -37,7 +37,9 @@ const page = () => {
         const endIndex = startIndex + pageLength;
         const shownItems = order.items.slice(startIndex, endIndex);
 
-    const fetchData = async() => {
+      
+    useEffect(()=> {
+      const fetchData = async() => {
         try {
           const res = await fetch(`http://localhost:4000/orders/${params.orderId}`);
           if (!res.ok) throw new Error("Failed to fetch the Order");
@@ -54,8 +56,6 @@ const page = () => {
           setLoading(false);
         }
       }
-      
-    useEffect(()=> {
         fetchData();
     }, []);
     

@@ -32,7 +32,7 @@ const Decision = ({setShowToast}: {setShowToast: React.Dispatch<React.SetStateAc
         </button>
 
         <div
-            className={`${showMenu ? "max-h-[290px]" : "max-h-0"} absolute overfloden end-0 z-10 mt-2 w-full rounded-md bg-white shadow-lg transition-all duration-500`}
+            className={`${showMenu ? "max-h-[290px]" : "max-h-0"} absolute overflow-hidden end-0 z-10 mt-2 w-full rounded-md bg-white shadow-lg transition-all duration-500`}
             role="menu"
             >
             {

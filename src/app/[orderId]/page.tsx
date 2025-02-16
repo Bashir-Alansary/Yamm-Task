@@ -31,7 +31,7 @@ const page = () => {
 
        /* pagination variables */
         const [currentPage, setCurrentPage] = useState<number>(1);
-        const pageLength = 7;
+        const pageLength = 6;
         const pages = Math.ceil(order.items.length / pageLength);
         const startIndex = (currentPage - 1) * pageLength;
         const endIndex = startIndex + pageLength;

@@ -12,8 +12,6 @@ const TableLoading = ({pageLength}: {pageLength:number}) => {
         </div>
         {
             [...Array(pageLength)].map((row, index)=> {
-                console.log("row: "+row);
-                
                 return (
                     <div key={index} className="flex items-center h-8 justify-between bg-white px-11 py-6">
                         <div>

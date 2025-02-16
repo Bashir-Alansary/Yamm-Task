@@ -9,11 +9,11 @@ const Decision = ({setShowToast}: {setShowToast: React.Dispatch<React.SetStateAc
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [decisionVal, setDecisionVal] = useState<string>("decision");
     
-    const handleToggleBtn = (): => {
+    const handleToggleBtn = (): void => {
       setShowMenu(!showMenu);
     }
 
-    const handleItemBtn = (val: string): => {
+    const handleItemBtn = (val: string): void => {
         setDecisionVal(val);
         setShowMenu(false);
         setShowToast(true);
@@ -37,7 +37,7 @@ const Decision = ({setShowToast}: {setShowToast: React.Dispatch<React.SetStateAc
             >
             {
             decisionItems.map((item:DecisionItemType)=> {
-                cons, name, value} = item;
+                const{id, name, value} = item;
                 return (
                     <button
                     key={id}

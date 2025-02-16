@@ -9,7 +9,8 @@ import { IoChevronBackCircle } from "react-icons/io5";
 const Sidebar = () => {
     const contextValues = useAppContext();
     const[activeBtn, setActiveBtn] = useState(sidebarLinks[1].id);
-    const handleButton = (id: number) => {
+
+    const handleBtn = (id: number) => {
         const newView = sidebarLinks.find(item => item.id === id);
         if (newView) {
             contextValues?.setCurrentView(newView.comp);
@@ -45,7 +46,7 @@ const Sidebar = () => {
                             <Link
                             href="/" 
                             className={`${activeBtn === id ? 'xs:text-secondary xs:bg-white xl:bg-secondary xl:text-white ':'xs:text-white bg-none'} xs:w-fit xl:w-[86%] text-white flex items-center py-3 xs:px-3 xl:px-5 rounded-lg transition-all duration-500`}
-                            onClick={()=>handleButton(id)}
+                            onClick={()=>handleBtn(id)}
                             >
                                 <span className='xl:mr-8 text-2xl'>{icon}</span>
                                 <span className='xs:hidden xl:block xl:text-lg'>{name}</span>

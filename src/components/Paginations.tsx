@@ -22,7 +22,7 @@ const Paginations = ({currentPage, setCurrentPage, pages}: Props) => {
     }
     
   return (
-    <div className="absolute bottom-0 right-0 flex items-center justify-center gap-3 mx-auto mt-8">
+    <div className="absolute xs:bottom-1/3 lg:bottom-0 right-0 flex items-center justify-center gap-3 mx-auto mt-8">
     <button
     className={`${currentPage === 1? "bg-[#c7a7e5]" : "bg-secondary"} size-7 flex items-center justify-center rounded-full shadow-md`}
     onClick={handlePrevPageBtn}

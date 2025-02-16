@@ -41,7 +41,7 @@ const Orders = () => {
       }
     }
     fetchData();
-  }, []);
+  }, [orders]);
 
   console.log(error);
   

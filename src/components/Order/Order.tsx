@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import Actions from './Actions/Actions'
 
-const Order = ({id, reason, store_name, store_logo, store_url, amount, active, items}:OrderType) => {
+const Order = ({id, reason, store_name, store_logo, store_url, amount, items}:OrderType) => {
   return (
     <tr>
       <td className="main-td">order #{id}</td>

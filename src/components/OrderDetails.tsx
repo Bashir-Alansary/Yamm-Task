@@ -57,7 +57,7 @@ const OrderDetails = () => {
         }
       }
         fetchData();
-    }, []);
+    }, [params.orderId]);
     
 
     if (loading) {

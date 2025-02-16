@@ -16,7 +16,7 @@ export default {
         softBg: "#edf0f7",
       },
       screens: {
-        xs: "400px",
+        xs: "200px",
       },
     },
   },

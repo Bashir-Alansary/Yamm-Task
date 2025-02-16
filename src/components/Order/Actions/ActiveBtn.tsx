@@ -1,12 +1,6 @@
-import { SetBooleanStateType } from '@/types'
 import React from 'react'
 
-interface Props {
-  active: boolean,
-  setShowToast: SetBooleanStateType,
-}
-
-const ActiveBtn = ({active, setShowToast}: Props) => {
+const ActiveBtn = ({setShowToast}: {setShowToast: React.Dispatch<React.SetStateAction<boolean>>}) => {
   return (
     <label className="inline-flex items-center me-5 cursor-pointer mx-6">
         <input type="checkbox" value="" className="sr-only peer" onChange={()=>setShowToast(true)} />

@@ -3,11 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import Actions from './Actions/Actions'
 
-const Order = ({id, reason, store_name, store_logo, store_url, amount, active, decision, items}:OrderType) => {
+const Order = ({id, reason, store_name, store_logo, store_url, amount, active, items}:OrderType) => {
   return (
     <tr>
-      <td className="px-4 py-2 whitespace-nowrap text-gray-700">order #{id}</td>
-      <td className="px-4 py-2 font-medium whitespace-nowrap text-gray-900">
+      <td className="main-td">order #{id}</td>
+      <td className="main-td">
         <a href={store_url} className='flex items-center'>
           <Image
             src={store_logo}
@@ -16,13 +16,13 @@ const Order = ({id, reason, store_name, store_logo, store_url, amount, active, d
             alt={store_name}
             className='mr-2 p-1 rounded-full shadow-md'
             />
-            <span>{store_name}</span>
+            <span className='hover:text-secondary'>{store_name}</span>
         </a>
       </td>
-      <td className="px-4 py-2 whitespace-nowrap text-gray-700">{reason}</td>
-      <td className="px-4 py-2 whitespace-nowrap text-gray-700">{amount}</td>
-      <td className="px-4 py-2 whitespace-nowrap text-gray-700">{items.length} (not yet).</td>
-      <td className="px-4 py-2 whitespace-nowrap"><Actions id={id} active={active}/></td>
+      <td className="main-td">{reason}</td>
+      <td className="main-td">{amount}</td>
+      <td className="main-td">{items.length} (not yet).</td>
+      <td className="px-4 py-2 whitespace-nowrap"><Actions id={id}/></td>
     </tr>
   )
 }

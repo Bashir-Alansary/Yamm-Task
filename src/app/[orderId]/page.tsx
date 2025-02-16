@@ -1,6 +1,7 @@
 "use client"
 import Item from '@/components/Item';
 import Paginations from '@/components/Paginations';
+import TableLoading from '@/components/TableLoading';
 import { itemsTableThs } from '@/constants';
 import { ItemType, OrderType } from '@/types';
 import Link from 'next/link';
@@ -48,6 +49,7 @@ const page = () => {
           } else {
             setError("An unknown error occurred")
           }
+          console.log(error);
         } finally {
           setLoading(false);
         }
@@ -56,30 +58,36 @@ const page = () => {
     useEffect(()=> {
         fetchData();
     }, []);
+    
+
+    if (loading) {
+      return <TableLoading pageLength={pageLength} />
+    }
+
 
   return (
-    <div className="relative pb-10 h-[80%]">
+    <div className="main-view">
       <Link href="/" className='flex items-center hover:text-blue-950'>
         <FaArrowLeftLong />
         <span className='ml-2'>Orders</span>
       </Link>
-      <h1 className='font-bold my-3'>Order Items</h1>
-      <div className='overflow-x-auto'>
-        <table className="min-w-full divide-y-4 divide-[#edf0f7] bg-white text-sm">
-            <thead className="ltr:text-left rtl:text-right">
+      <h1 className='main-h1'>Order Items</h1>
+      <div className='table-parent'>
+        <table className="main-table">
+            <thead className="main-thead">
                 <tr>
                 {
                     itemsTableThs.map(itemTh => {
                     const {id, name} = itemTh;
                     return (
-                        <th key={id} className="px-4 py-2 bg-[#edf0f7] font-bold whitespace-nowrap text-gray-900 text-left">{name}</th>
+                        <th key={id} className="main-th">{name}</th>
                     )
                     })
                 }
                 </tr>
             </thead>
 
-            <tbody className="divide-y-4 divide-[#edf0f7]">
+            <tbody className="main-tbody">
                 {
                     shownItems.map((item:ItemType) => <Item key={item.id} {...item} />)
                 }
@@ -89,8 +97,7 @@ const page = () => {
       <Paginations 
         currentPage={currentPage}
         setCurrentPage={setCurrentPage} 
-        pages={pages} 
-        pageLength={pageLength}  
+        pages={pages}
       />
     </div>
   )

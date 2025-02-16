@@ -1,19 +1,19 @@
 "use client"
 import { decisionItems } from '@/constants';
-import { DecisionItemType, SetBooleanStateType } from '@/types';
+import { DecisionItemType } from '@/types';
 import React, { useState } from 'react'
 import { FaChevronDown } from "react-icons/fa";
 
-const Decision = ({setShowToast}: {setShowToast: SetBooleanStateType}) => {
+const Decision = ({setShowToast}: {setShowToast: React.Dispatch<React.SetStateAction<boolean>>}) => {
     
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [decisionVal, setDecisionVal] = useState<string>("decision");
     
-    const handleToggleBtn = (): void => {
+    const handleToggleBtn = (): => {
       setShowMenu(!showMenu);
     }
 
-    const handleItemBtn = (val: string): void => {
+    const handleItemBtn = (val: string): => {
         setDecisionVal(val);
         setShowMenu(false);
         setShowToast(true);
@@ -22,7 +22,7 @@ const Decision = ({setShowToast}: {setShowToast: SetBooleanStateType}) => {
   return (
     <div className="relative min-w-[118px]">
         <button 
-        className="inline-flex justify-between items-center w-full overflow-hidden rounded-md border bg-white p-[0.65rem] text-gray-600 hover:bg-gray-50 hover:text-gray-700"
+        className="inline-flex justify-between items-center w-full overfloden rounded-md border bg-white p-[0.65rem] text-gray-600 hover:bg-gray-50 hover:text-gray-700"
         onClick={handleToggleBtn}
         >
         <span className="pr-3 text-sm/none text-gray-600 hover:bg-gray-50 hover:text-gray-700">
@@ -32,12 +32,12 @@ const Decision = ({setShowToast}: {setShowToast: SetBooleanStateType}) => {
         </button>
 
         <div
-            className={`${showMenu ? "max-h-[290px]" : "max-h-0"} absolute overflow-hidden end-0 z-10 mt-2 w-full rounded-md bg-white shadow-lg transition-all duration-500`}
+            className={`${showMenu ? "max-h-[290px]" : "max-h-0"} absolute overfloden end-0 z-10 mt-2 w-full rounded-md bg-white shadow-lg transition-all duration-500`}
             role="menu"
             >
             {
             decisionItems.map((item:DecisionItemType)=> {
-                const {id, name, value} = item;
+                cons, name, value} = item;
                 return (
                     <button
                     key={id}

@@ -24,15 +24,19 @@ const Header = () => {
             </button>
           <form className='xs:hidden md:block md:ml-8'>
               <div className='w-fit h-12'>
-                  <input type='text' placeholder='search something' className='h-full md:w-88 lg:w-96 px-7 rounded-md bg-white shadow-md'/>
+                  <input 
+                  type='text' 
+                  placeholder='search something' 
+                  className='h-full md:w-88 lg:w-96 px-7 rounded-md bg-white shadow-md'
+                  />
               </div>
           </form>
         </div>
         <div className='xs:hidden md:flex'>
-          <button className='size-14 text-xl bg-white flex items-center justify-center shadow-md rounded-md'>
+          <button className='header-icon'>
             <IoIosNotificationsOutline />
           </button>
-          <button className='size-14 text-xl bg-white flex items-center justify-center shadow-md rounded-md ml-4'>
+          <button className='header-icon ml-4'>
             <FaCog />
           </button>
         </div>

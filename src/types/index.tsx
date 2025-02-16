@@ -27,5 +27,3 @@ export type TableThsType = {
     id: number;
     name: string;
 }
-
-export type SetBooleanStateType = React.Dispatch<React.SetStateAction<boolean>>;

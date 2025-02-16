@@ -19,3 +19,25 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* main view div table grandpa */
+.main-view {@apply relative pb-10 h-[80%]}
+
+.main-h1 { @apply font-bold my-3 text-primary text-xl }
+
+.table-parent {@apply overflow-x-auto pt-6}
+
+.main-table {@apply min-w-full divide-y-4 divide-softBg bg-white text-sm}
+
+.main-thead {@apply ltr:text-left rtl:text-right}
+
+.main-th {@apply px-4 py-2 bg-softBg font-bold whitespace-nowrap text-primary text-left}
+
+.main-tbody {@apply divide-y-4 divide-softBg}  
+
+.main-td {@apply px-4 py-2 whitespace-nowrap text-gray-700}
+
+/* header icon */
+.header-icon {
+  @apply size-14 text-xl bg-white flex items-center justify-center shadow-md rounded-md text-secondary
+}

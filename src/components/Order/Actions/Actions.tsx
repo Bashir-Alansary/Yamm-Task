@@ -6,12 +6,7 @@ import ActiveBtn from './ActiveBtn';
 import Decision from './Decision';
 import Toast from './Toast';
 
-interface Props {
-    id: string,
-    active: boolean,
-}
-
-const Actions = ({id, active}: Props) => {
+const Actions = ({id}: {id: string}) => {
 
   const [showToast, setShowToast] = useState<boolean>(false);
 
@@ -27,11 +22,11 @@ const Actions = ({id, active}: Props) => {
           {showToast && <Toast setShowToast={setShowToast} />}
           <div className='flex'>
               <Decision setShowToast={setShowToast} />
-              <ActiveBtn active={active} setShowToast={setShowToast}/>
+              <ActiveBtn setShowToast={setShowToast}/>
           </div>
         </div>
         <Link href={"/" + id} className='p-1 shadow-md rounded-full before:content-["view order"]'>
-            <FaCircleInfo className='text-blue-950 text-xl' />
+            <FaCircleInfo className='text-primary text-xl' />
         </Link>
     </div>
   )

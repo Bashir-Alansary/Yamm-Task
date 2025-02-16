@@ -19,7 +19,7 @@ const Sidebar = () => {
     }
     
   return (
-    <div className={`xs:fixed xs:top-0 ${contextValues?.viewSidbar? 'xs:left-0' : 'xs:-left-full'} max-h-screen overflow-y-auto xl:relative xl:top-0 xl:left-0 xs:w-20 xl:w-[20%] bg-[#0f1241] text-center py-8 px-2 z-50 transition-all duration-500`}>
+    <div className={`xs:fixed xs:top-0 ${contextValues?.viewSidbar? 'xs:left-0' : 'xs:-left-full'} max-h-screen overflow-y-auto xl:relative xl:top-0 xl:left-0 xs:w-20 xl:w-[20%] bg-primary text-center py-8 px-2 z-50 transition-all duration-500`}>
         <Image
         src="/images/logo.png"
         width={64}
@@ -44,7 +44,7 @@ const Sidebar = () => {
                         >
                             <Link
                             href="/" 
-                            className={`${activeBtn === id ? 'xs:text-[#8662a7] xs:bg-white xl:bg-[#8662a7] xl:text-white ':'xs:text-white bg-none'} xs:w-fit xl:w-[86%] text-white flex items-center py-3 xs:px-3 xl:px-5 rounded-lg transition-all duration-500`}
+                            className={`${activeBtn === id ? 'xs:text-secondary xs:bg-white xl:bg-secondary xl:text-white ':'xs:text-white bg-none'} xs:w-fit xl:w-[86%] text-white flex items-center py-3 xs:px-3 xl:px-5 rounded-lg transition-all duration-500`}
                             onClick={()=>handleButton(id)}
                             >
                                 <span className='xl:mr-8 text-2xl'>{icon}</span>

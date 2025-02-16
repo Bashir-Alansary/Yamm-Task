@@ -33,6 +33,7 @@ const Orders = () => {
       } else {
         setError("An unknown error occurred")
       }
+      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -52,24 +53,24 @@ const Orders = () => {
   }
 
   return (
-  <div className="relative pb-10 h-[80%]">
-    <h1 className='font-bold mb-3'>Refund Orders</h1>
-    <div className='overflow-x-auto'>
-      <table className="min-w-full divide-y-4 divide-[#edf0f7] bg-white text-sm">
-        <thead className="ltr:text-left rtl:text-right">
+  <div className="main-view">
+    <h1 className='main-h1'>Refund Orders</h1>
+    <div className='table-parent'>
+      <table className="main-table">
+        <thead className="main-thead">
           <tr>
             {
               ordersTableThs.map(tableTh => {
                 const {id, name} = tableTh;
                 return (
-                  <th key={id} className="px-4 py-2 bg-[#edf0f7] font-bold whitespace-nowrap text-gray-900 text-left">{name}</th>
+                  <th key={id} className="main-th">{name}</th>
                 )
               })
             }
           </tr>
         </thead>
 
-        <tbody className="divide-y-4 divide-[#edf0f7]">
+        <tbody className="main-tbody">
           {
             shownOrders.map((order:OrderType) => <Order key={order.id} {...order} />)
           }
@@ -80,7 +81,6 @@ const Orders = () => {
       currentPage={currentPage}
       setCurrentPage={setCurrentPage} 
       pages={pages} 
-      pageLength={pageLength}  
     />
   </div>
   )
